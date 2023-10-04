@@ -1,5 +1,5 @@
 import "./header.css";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
@@ -13,7 +13,11 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <h1>Where in the world?</h1>
+        {/* TEst */}
+        <Link to="/">
+          <h1>Where in the world?</h1>
+        </Link>
+
         {darkTheme ? (
           <div className="theme-light hidden" onClick={handleTheme}>
             <i className="fa-solid fa-moon"></i>

@@ -9,6 +9,7 @@ const CountryDetail = () => {
   const { singleCountry, error, message, loading } = useSelector(
     (state) => state.country
   );
+  console.log(singleCountry);
   const { code } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,7 +33,6 @@ const CountryDetail = () => {
       {loading && <h1>Loading...</h1>}
       {!loading && singleCountry.length > 0 && (
         <div className="country-detail-content">
-          <>
             <img
               src={singleCountry[0].flags.png}
               alt={singleCountry[0].flags.alt}
@@ -91,25 +91,23 @@ const CountryDetail = () => {
               <div className="border">
                 <p>
                   Border Countries:
-                  {singleCountry[0].borders.length > 0 ? (
-                    singleCountry[0].borders.map((border, index) => {
-                      return (
-                        <Link
-                          to={`/${border}`}
-                          key={index}
-                          className="border-name"
-                        >
-                          {border}
-                        </Link>
-                      );
-                    })
+                  {singleCountry[0].borders &&
+                  singleCountry[0].borders.length > 0 ? (
+                    singleCountry[0].borders.map((border, index) => (
+                      <Link
+                        to={`/${border}`}
+                        key={index}
+                        className="border-name"
+                      >
+                        {border}
+                      </Link>
+                    ))
                   ) : (
                     <span>No Borders</span>
                   )}
                 </p>
               </div>
             </div>
-          </>
         </div>
       )}
 

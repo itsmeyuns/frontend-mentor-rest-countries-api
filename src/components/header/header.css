@@ -13,6 +13,10 @@
   color: var(--color-white);
 }
 
+.main-container.dark .header h1 {
+  color: var(--color-white);
+}
+
 .theme-light {
   display: flex;
   align-items: center;

@@ -41,21 +41,24 @@ const Filter = () => {
 
         <i className="fa-solid fa-angle-down"></i>
       </div>
-      {isOpen &&
-        regions.map((region, index) => {
-          return (
-            <div
-              className="dropdown-item"
-              key={index}
-              onClick={() => {
-                setFilter(region);
-                handelDropdown();
-              }}
-            >
-              {region}
-            </div>
-          );
-        })}
+      {isOpen && (
+        <div className="dropdown">
+          {regions.map((region, index) => {
+            return (
+              <div
+                className="dropdown-item"
+                key={index}
+                onClick={() => {
+                  setFilter(region);
+                  handelDropdown();
+                }}
+              >
+                {region}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };

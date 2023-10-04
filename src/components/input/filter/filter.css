@@ -70,5 +70,6 @@
 }
 
 .main-container.dark .dropdown-item {
+  background-color: var(--dark-blue-elements);
   color: var(--color-white);
 }
