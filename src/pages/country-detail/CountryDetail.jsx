@@ -33,81 +33,77 @@ const CountryDetail = () => {
       {loading && <h1>Loading...</h1>}
       {!loading && singleCountry.length > 0 && (
         <div className="country-detail-content">
-            <img
-              src={singleCountry[0].flags.png}
-              alt={singleCountry[0].flags.alt}
-              className="country-detail-image"
-            />
-
-            <div className="country-detail-right">
-              <h1>{singleCountry[0].name.common}</h1>
-              <div className="details">
-                <div className="detail-left">
-                  <p>
-                    Offcial Name: <span>{singleCountry[0].name.common}</span>
-                  </p>
-                  <p>
-                    Population: <span>{singleCountry[0].population}</span>
-                  </p>
-                  <p>
-                    Region: <span>{singleCountry[0].region}</span>
-                  </p>
-
-                  <p>
-                    Sub Region: <span>{singleCountry[0].subregion}</span>
-                  </p>
-                  <p>
-                    Capital: <span>{singleCountry[0].capital}</span>
-                  </p>
-                </div>
-
-                <div className="detail-right">
-                  <p>
-                    Top Level Domain: <span>{singleCountry[0].tld[0]}</span>
-                  </p>
-                  <p>
-                    Currencies:
-                    <span>
-                      {Object.values(singleCountry[0].currencies)
-                        .map((item) => {
-                          return item.name;
-                        })
-                        .join(", ")}
-                    </span>
-                  </p>
-                  <p>
-                    Languages:
-                    <span>
-                      {Object.values(singleCountry[0].languages)
-                        .map((item) => {
-                          return item;
-                        })
-                        .join(", ")}
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="border">
+          <img
+            src={singleCountry[0].flags.png}
+            alt={singleCountry[0].flags.alt}
+            className="country-detail-image"
+          />
+          <div className="country-details">
+            <h1>{singleCountry[0].name.common}</h1>
+            <div className="country-details-flex">
+              <div className="country-details-right">
                 <p>
-                  Border Countries:
-                  {singleCountry[0].borders &&
-                  singleCountry[0].borders.length > 0 ? (
-                    singleCountry[0].borders.map((border, index) => (
-                      <Link
-                        to={`/${border}`}
-                        key={index}
-                        className="border-name"
-                      >
-                        {border}
-                      </Link>
-                    ))
-                  ) : (
-                    <span>No Borders</span>
-                  )}
+                  <span className="country-data">Offcial Name:</span>{" "}
+                  {singleCountry[0].name.official}
+                </p>
+                <p>
+                  <span className="country-data">Population:</span>{" "}
+                  {singleCountry[0].population}
+                </p>
+                <p>
+                  <span className="country-data">Region:</span>{" "}
+                  {singleCountry[0].region}
+                </p>
+
+                <p>
+                  <span className="country-data">Sub Region:</span>{" "}
+                  {singleCountry[0].subregion}
+                </p>
+                <p>
+                  <span className="country-data">Capital:</span>{" "}
+                  {singleCountry[0].capital}
+                </p>
+              </div>
+              <div className="country-details-left">
+                <p>
+                  <span className="country-data">Top Level Domain:</span>{" "}
+                  {singleCountry[0].tld[0]}
+                </p>
+                <p>
+                  <span className="country-data">Currencies:</span>
+                  {Object.values(singleCountry[0].currencies)
+                    .map((item) => {
+                      return item.name;
+                    })
+                    .join(", ")}
+                </p>
+                <p>
+                  <span className="country-data">Languages:</span>
+                  {Object.values(singleCountry[0].languages)
+                    .map((item) => {
+                      return item;
+                    })
+                    .join(", ")}
                 </p>
               </div>
             </div>
+
+            <div className="border">
+              <p>
+                Border Countries:
+                {singleCountry[0].borders &&
+                singleCountry[0].borders.length > 0 ? (
+                  singleCountry[0].borders.map((border, index) => (
+                    <Link to={`/${border}`} key={index} className="border-name">
+                      {border}
+                    </Link>
+                  ))
+                ) : (
+                  <span>No Borders</span>
+                )}
+              </p>
+            </div>
+          </div>
         </div>
       )}
 
