@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/frontend-mentor-rest-countries-api/static/css/main.0a0f5e11.css",
+    "main.js": "/frontend-mentor-rest-countries-api/static/js/main.9f6a8632.js",
+    "static/js/787.a960f08c.chunk.js": "/frontend-mentor-rest-countries-api/static/js/787.a960f08c.chunk.js",
+    "index.html": "/frontend-mentor-rest-countries-api/index.html",
+    "main.0a0f5e11.css.map": "/frontend-mentor-rest-countries-api/static/css/main.0a0f5e11.css.map",
+    "main.9f6a8632.js.map": "/frontend-mentor-rest-countries-api/static/js/main.9f6a8632.js.map",
+    "787.a960f08c.chunk.js.map": "/frontend-mentor-rest-countries-api/static/js/787.a960f08c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a0f5e11.css",
+    "static/js/main.9f6a8632.js"
+  ]
+}
